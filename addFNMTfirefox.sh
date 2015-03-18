@@ -18,6 +18,8 @@ certificateFile="FNMTClase2CA_FNMT_ES.pem"
 certificateName="FNMT Clase 2 CA - FNMT"
 certificateRootFile="ACRAIZFNMTRCM.crt"
 certificateRootName="AC RAIZ FNMT-RCM"
+certificateACComponentesInformaticosFile="AC_Componentes_Informaticos_SHA256.cer"
+certificateACComponentesInformaticosName="AC Componentes Informaticos"
 certificateDB="cert8.db"
 homeDir="/home"
 depthDir=3
@@ -30,4 +32,6 @@ do
   certutil -A -n "${certificateName}" -t "CT,c,c" -i ${certificateFile} -d ${certDir}
   echo "Añadiendo certificado $certificateRootFile a $certDir/$certificateDB"
   certutil -A -n "${certificateRootName}" -t "CT,C,C" -i ${certificateRootFile} -d ${certDir}
+  echo "Añadiendo certificado $certificateACComponentesInformaticosFile a $certDir/$certificateDB"
+  certutil -A -n "${certificateACComponentesInformaticosName}" -t "CT,C,C" -i ${certificateACComponentesInformaticosFile} -d ${certDir}
 done

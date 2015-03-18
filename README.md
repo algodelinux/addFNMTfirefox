@@ -8,6 +8,8 @@ Lo primero que hace el script es instalar el paquete libnss3-utils para disponer
 He definido las siguientes variables en el script:  
 certificateFile="FNMTClase2CA_FNMT_ES.pem"  
 certificateName="FNMT Clase 2 CA - FNMT"  
+certificateRootFile="ACRAIZFNMTRCM.crt"  
+certificateRootName="AC RAIZ FNMT-RCM"  
 certificateDB="cert8.db"  
 homeDir="/home"  
 depthDir=3  

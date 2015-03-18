@@ -16,6 +16,8 @@ dpkg -l | grep ^"ii  libnss3-tools" > /dev/null || apt-get -y install libnss3-to
 # Bloque de definición de variables
 certificateFile="FNMTClase2CA_FNMT_ES.pem"
 certificateName="FNMT Clase 2 CA - FNMT"
+certificateRootFile="ACRAIZFNMTRCM.crt"
+certificateRootName="AC RAIZ FNMT-RCM"
 certificateDB="cert8.db"
 homeDir="/home"
 depthDir=3
@@ -26,4 +28,6 @@ do
   certDir=$(dirname ${certDB});
   echo "Añadiendo certificado $certificateFile a $certDir/$certificateDB"
   certutil -A -n "${certificateName}" -t "CT,c,c" -i ${certificateFile} -d ${certDir}
+  echo "Añadiendo certificado $certificateRootFile a $certDir/$certificateDB"
+  certutil -A -n "${certificateRootName}" -t "CT,C,C" -i ${certificateRootFile} -d ${certDir}
 done
